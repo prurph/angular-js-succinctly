@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Angular.js</title>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="../js/ch3/ch3ScopeAttributes.js"></script>
+</head>
+<body ng-app="MyApp">
+  <div my-isolate-scope="Hello there" second-attribute="friend!"></div>
+
+  <my-bind-to-directive text="Hello World"></my-bind-to-directive>
+
+  <my-widget-expr fn="count = count + count2"></my-widget-expr>
+
+  <repeat-n-times repeat="5">
+    <h1>Header 1</h1>
+    <p>This is the paragraph.</p>
+  </repeat-n-times>
+
+  <repeat-p-times repeat="5">
+    <h1>You can click this to make it red</h1>
+  </repeat-p-times>
+</body>
+</html>
