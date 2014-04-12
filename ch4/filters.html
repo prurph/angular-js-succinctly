@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Angular.js</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="../js/ch4/angular-locale_de.js"></script>
+  <script src="../js/ch4/filters.js"></script>
+</head>
+<body ng-app="MyApp">
+  <input type="text" ng-model="amount" placeholder="Enter amount"/>
+  <p>Default Currency: {{ amount | currency }}</p>
+  <p>Custom Currency: {{ amount | currency: "Euro" }}</p>
+
+  <input type="text" ng-model="prefix" placeholder="Enter prefix"/>
+  <input type="text" ng-model="text" placeholder="Enter text"/>
+  <input type="text" ng-model="suffix" placeholder="Enter suffix"/>
+  <p>Input: {{ text }}</p>
+  <p>Filtered input: {{ text | reverse: {prefix: prefix, suffix: suffix} }}</p>
+
+  <input type="text" ng-model="exclusion" placeholder="Exclude a name"/>
+  <label>
+    Sort?<input type="checkbox" ng-model="sort" ng-init="sort = false"/>
+  </label>
+  <ul ng-init="names = ['Peter', 'Anton', 'John']">
+    <li ng-repeat="name in names | exclude: exclusion | sortAscending: sort">
+      <span>{{name}}</span>
+    </li>
+  </ul>
+
+  <div>
+    <label>
+      {{ data1 | checkmark }}
+      <input type="checkbox" ng-model="data1" ng-init="data1 = false">
+    </label>
+    <label>
+      {{ data2 | checkmark }}
+      <input type="checkbox" ng-model="data2" ng-init="data2 = true">
+    </label>
+  </div>
+</body>
+</html>
