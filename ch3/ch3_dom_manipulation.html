@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Angular.js</title>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="../js/ch3/ch3DomManipulation.js"></script>
+</head>
+<body ng-app="MyApp">
+  <label><input type="checkbox" ng-model="checked"/>Toggle Button</label>
+  <button ng-disabled="checked">Press me!</button>
+
+  <my-widget>
+    <p>Hello World</p>
+  </my-widget>
+</body>
+</html>

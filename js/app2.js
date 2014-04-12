@@ -1,6 +1,6 @@
 var app = angular.module("MyApp", []);
 
-app.directive(["show", "size"], function() {
+app.directive("show", function() {
   return {
     link: function(scope, element, attributes) {
       // input box has ng-model="visible" so its value becomes that of visible

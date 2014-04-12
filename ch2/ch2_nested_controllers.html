@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Angular.js</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="../js/ch2/ch2NestedControllers.js"></script>
+</head>
+<body ng-app="MyApp">
+  <div ng-controller="MyCtrl">
+    <label>Primitive</label>
+    <input type="text" ng-model="name">
+
+    <label>Object</label>
+    <input type="text" ng-model="user.name">
+
+    <div class="nested" ng-controller="MyNestedCtrl">
+      <label>Primitive</label>
+      <input type="text" ng-model="name">
+
+      <label>Primitive with explicit $parent.reference</label>
+      <input type="text" ng-model="$parent.name">
+
+      <label>Object</label>
+      <input type="text" ng-model="user.name"
+    </div>
+  </div>
+
+  <div ng-controller="MyCtrl">
+    <ul ng-repeat="user in users">
+      <li>{{user}}</li>
+    </ul>
+    <div class="nested" ng-controller="AnotherCtrl">
+      First user: {{firstUser}}
+    </div>
+  </div>
+</body>
+</html>

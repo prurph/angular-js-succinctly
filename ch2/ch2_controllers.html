@@ -3,11 +3,15 @@
 <head>
   <title>Learning Angular.js</title>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
-  <script src="js/ch2.js"></script>
+  <script src="../js/ch2/ch2Controllers.js"></script>
 </head>
 <body ng-app>
   <div ng-controller="MyCtrl">
     <p>{{value}}</p>
+    <p ng-init="incrementValue(1)">{{value}}</p>
+    <p>{{getIncrementedValue()}}</p>
+    <input type="text" ng-model="name" placeholder="Enter your name">
+    <p>{{greeting}}</p>
   </div>
 </body>
 </html>
